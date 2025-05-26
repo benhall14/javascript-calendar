@@ -1,0 +1,281 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Javascript Calendar By &amp;benhall14</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="dist/calendar.min.js"></script>
+
+    <link rel="stylesheet" href="dist/calendar.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        .wrapper {
+
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            background: #d9e2ec;
+            padding: 100px;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+
+        }
+
+        .grid {
+            display: grid;
+            gap: 50px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .javascript-calendar {
+            border: 2px solid #bcccdc;
+            border-radius: 8px;
+        }
+
+
+        .javascript-calendar-title th {
+            color: #334e68;
+        }
+
+        .javascript-calendar-header .javascript-calendar-day {
+            color: #334e68;
+        }
+
+        .javascript-calendar-date {
+            color: #334e68;
+        }
+
+        .javascript-calendar-events {
+            font-size: 12px;
+            color: #334e68;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1 style="text-align: center;margin-bottom: 50px; ">Javascript Calendar</h1>
+
+        <div class=" container">
+
+            <div class="summary">
+
+                <p>A simple lightweight pure javascript to generate calendars.</p>
+
+                <p>You can pass events using optional parameters.</p>
+
+                <p><b>File Size is less than 3 KB</b> - This is a pure javascript calendar, no jQuery or other
+                    dependencies required.</p>
+
+            </div>
+
+            <div class="text">
+
+                <p>It's really simple to implement a calendar by adding the HTML element to your page:</p>
+
+                <pre>&lt;div id="calendar"&gt;&lt;/div&gt;</pre>
+
+                <p>Then define your calendar:</p>
+
+                <pre>Calendar(document.getElementById('calendar'))</pre>
+
+                <p>By default, the calendar will use the current date as the calendar date, but you can specify a
+                    different date passing it through when you initialize.</p>
+
+                <pre>Calendar(document.getElementById('calendar'), {date:new Date()})</pre>
+
+                <p>You can add the optional parameters by passing a JavaScript object. For example, by default, the
+                    calendar uses the browsers local time for <b>Month</b> and <b>Day</b> names. You can override this
+                    by passing in your own:</p>
+
+                <pre>Calendar(document.getElementById('calendar'), {date:new Date(), days:['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']})</pre>
+
+                <p>Parameter options:
+
+                <ul>
+
+                    <li>'date' - The date of the calendar to be instantiated.</li>
+
+                    <li>'class_prefix' - The class prefix to be used for the calendar. Default is 'javascript-calendar'.
+                    </li>
+
+                    <li>'months' - Override the Month names i.e January, February, March, April, May, June, July,
+                        August, September, October, November, December.</li>
+
+                    <li>'days' - Override the day names i.e Sunday, Monday, Tuesday, Wednesday, Thursday, Friday,
+                        Saturday.</li>
+
+                    <li>'events' - The formatted array of events.</li>
+
+                </ul>
+
+                </p>
+
+                <p>The passed event array must be in the following format:</p>
+
+                <pre>var events = [
+    {start: '2025/09/01', end: '2025/09/07', summary: "Example Event", mask: true},
+    {start: '2025/09/14', end: '2025/09/20', summary: "Example Event #2", mask: true},
+    {start: '2025/10/05', end: '2025/10/15', summary: "Example Event #3", mask: true}
+];</pre>
+                <p>Each event must have a start date, end date, summary string and a mask boolean. The mask boolean
+                    should be true if you want to 'mask'(block off) event dates, or false.</p>
+
+                <p><b>Please make sure you include the calendar.css style sheet in the head of your page, unless you
+                        choose to use your own style declarations.</b> - the included calendar.css is generally
+                    unopinionated and will use page defaults, including fonts, sizes, etc.</p>
+
+            </div>
+            <br />
+
+            <h2>Examples Integrations</h2>
+
+            <div class="grid">
+
+                <div id="calendar-1"></div>
+
+                <div id="calendar-2"></div>
+
+                <div id="calendar-3"></div>
+
+                <div id="calendar-4"></div>
+
+                <div id="calendar-5"></div>
+
+                <div id="calendar-6"></div>
+
+                <div id="calendar-7"></div>
+
+                <div id="calendar-8"></div>
+
+                <div id="calendar-9"></div>
+
+                <div id="calendar-10"></div>
+
+                <div id="calendar-11"></div>
+
+                <div id="calendar-12"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+
+        <p>&copy; Copyright Benjamin Hall :: Conobe :: <a
+                href="https://github.com/benhall14/javascript-calendar">https://github.com/benhall14/javascript-calendar</a>
+        </p>
+
+    </div>
+
+    <script>
+        var events = [{
+            start: '2025/05/30',
+            end: '2025/05/31',
+            summary: "Example Event",
+            mask: true
+        }, {
+            start: '2025/05/03',
+            end: '2025/05/06',
+            summary: "Example Event #2",
+            mask: true
+        }];
+
+        let calendar_1_element = document.getElementById('calendar-1');
+        let calendar_1 = Calendar(calendar_1_element, {
+            date: new Date('2025-01-01'),
+            events: events
+        });
+
+        let calendar_2_element = document.getElementById('calendar-2');
+        let calendar_2 = Calendar(calendar_2_element, {
+            date: new Date('2025-02-01'),
+            events: events
+        });
+
+        let calendar_3_element = document.getElementById('calendar-3');
+        let calendar_3 = Calendar(calendar_3_element, {
+            date: new Date('2025-03-01'),
+            events: events
+        });
+
+        let calendar_4_element = document.getElementById('calendar-4');
+        let calendar_4 = Calendar(calendar_4_element, {
+            date: new Date('2025-04-01'),
+            events: events,
+        });
+
+        let calendar_5_element = document.getElementById('calendar-5');
+        let calendar_5 = Calendar(calendar_5_element, {
+            date: new Date('2025-05-01'),
+            events: events,
+        });
+
+        let calendar_6_element = document.getElementById('calendar-6');
+        let calendar_6 = Calendar(calendar_6_element, {
+            date: new Date('2025-06-01'),
+            events: events,
+        });
+
+        let calendar_7_element = document.getElementById('calendar-7');
+        let calendar_7 = Calendar(calendar_7_element, {
+            date: new Date('2025-07-01'),
+            events: events,
+        });
+
+        let calendar_8_element = document.getElementById('calendar-8');
+        let calendar_8 = Calendar(calendar_8_element, {
+            date: new Date('2025-08-01'),
+            events: events,
+        });
+
+        let calendar_9_element = document.getElementById('calendar-9');
+        let calendar_9 = Calendar(calendar_9_element, {
+            date: new Date('2025-09-01'),
+            events: events,
+        });
+
+        let calendar_10_element = document.getElementById('calendar-10');
+        let calendar_10 = Calendar(calendar_10_element, {
+            date: new Date('2025-10-01'),
+            events: events,
+        });
+
+        let calendar_11_element = document.getElementById('calendar-11');
+        let calendar_11 = Calendar(calendar_11_element, {
+            date: new Date('2025-11-01'),
+            events: events,
+        });
+
+        let calendar_12_element = document.getElementById('calendar-12');
+        let calendar_12 = Calendar(calendar_12_element, {
+            date: new Date('2025-12-01'),
+            events: events,
+        });
+    </script>
+
+</body>
+
+</html>

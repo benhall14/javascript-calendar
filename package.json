@@ -1,0 +1,29 @@
+{
+    "name": "javascript-calendar",
+    "version": "1.0.0",
+    "description": "A really simple event-driven calendar in pure javascript. No dependencies.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benhall14/javascript-calendar.git"
+    },
+    "keywords": [
+        "javascript",
+        "calendar",
+        "events",
+        "days",
+        "months",
+        "js"
+    ],
+    "main": "dist/calendar.min.js",
+    "author": {
+        "name": "Benjamin Hall",
+        "email": "ben@conobe.co.uk",
+        "url": "https://conobe.co.uk"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/benhall14/javascript-calendar/issues"
+    },
+    "homepage": "https://conobe.co.uk/code",
+    "dependencies": {}
+}
