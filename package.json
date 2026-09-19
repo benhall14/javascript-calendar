@@ -1,6 +1,6 @@
 {
     "name": "javascript-calendar",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A really simple event-driven calendar in pure javascript. No dependencies.",
     "repository": {
         "type": "git",
