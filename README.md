@@ -6,14 +6,48 @@ You can pass events using optional parameters.
 ***File Size is less than 3 KB*** - This is a pure javascript calendar, no jQuery or other dependencies required.
 
 # Usage
-Please make sure you have added the script tag added to the head of your page.
+## Use directly
+
+If you are using the files from this repository, add the bundled script to the head of your page:
+
 ```html
-<script type="text/javascript" src="js/calendar.min.js"></script>
+<script type="text/javascript" src="dist/calendar.min.js"></script>
 ```
 
-You should probably also make sure you include the calendar.css stylesheet, unless you are creating your own stylesheet.
+Include the stylesheet too, unless you are creating your own styles:
+
 ```html
-<link rel="stylesheet" type="text/css" href="css/calendar.css">
+<link rel="stylesheet" type="text/css" href="dist/calendar.css">
+```
+
+## Use with npm
+
+Install the package from npm:
+
+```sh
+npm install javascript-calendar
+```
+
+For a browser page, load the bundled files from `node_modules`:
+
+```html
+<script type="text/javascript" src="node_modules/javascript-calendar/dist/calendar.min.js"></script>
+```
+
+Include the stylesheet too, unless you are creating your own styles:
+
+```html
+<link rel="stylesheet" type="text/css" href="node_modules/javascript-calendar/dist/calendar.css">
+```
+
+In a CommonJS application, require the calendar function directly:
+
+```js
+// ES Modules
+import Calendar from 'javascript-calendar';
+
+// CommonJS
+const Calendar = require('javascript-calendar');
 ```
 
 It's really simple to implement a calendar by adding the HTML element to your page:
@@ -37,7 +71,7 @@ By default, the calendar will use the current date as the calendar date, but you
 You can add the optional parameters by passing a JavaScript object. For example, by default, the calendar uses the browsers local time for ***Month*** and ***Day*** names. You can override this by passing in your own:
 
 ```js
-    Calendar(document.getElementById('calendar'), {date:new Date(), days:['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']})
+    Calendar(document.getElementById('calendar'), {date:new Date(), days:['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']})
 ```
 
 Parameter options:

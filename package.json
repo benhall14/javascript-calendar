@@ -14,7 +14,10 @@
         "months",
         "js"
     ],
-    "main": "dist/calendar.min.js",
+    "main": "dist/calendar.js",
+    "files": [
+        "dist"
+    ],
     "author": {
         "name": "Benjamin Hall",
         "email": "ben@conobe.co.uk",
@@ -24,6 +27,6 @@
     "bugs": {
         "url": "https://github.com/benhall14/javascript-calendar/issues"
     },
-    "homepage": "https://conobe.co.uk/code",
+    "homepage": "https://conobe.co.uk/code/javascript-calendar",
     "dependencies": {}
 }
